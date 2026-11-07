@@ -9,9 +9,11 @@
 #  (the framework owns them); this file only carries project-wide settings.
 #
 #  Device and fitter settings are the same as the Skull & Crossbones core
-#  (DE10-nano / Cyclone V).  The revision is `Batman`, so
-#  `quartus_sh --flow compile Batman` emits output_files/Batman.rbf, matching
-#  the MRA's <rbf>Batman</rbf> with no rename step.
+#  (DE10-nano / Cyclone V).  The revision is `Arcade-Batman`, so
+#  `quartus_sh --flow compile Arcade-Batman` emits
+#  output_files/Arcade-Batman.rbf.  MiSTer arcade bitstreams carry the
+#  `Arcade-` prefix; the MiSTer distribution strips it when it installs the
+#  core, which leaves the name the MRA's <rbf>Batman</rbf> asks for.
 #
 # --------------------------------------------------------------------------
 

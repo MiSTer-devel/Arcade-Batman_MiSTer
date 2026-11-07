@@ -1,6 +1,6 @@
 # Synthesis source list for the Batman core.
 # Add game RTL here only, never through the Quartus GUI, and keep game logic out
-# of sys/ (the unmodified MiSTer framework).  Quartus rewrites Batman.qsf on
+# of sys/ (the unmodified MiSTer framework).  Quartus rewrites Arcade-Batman.qsf on
 # every compile, so hand-maintained assignments live here instead.
 #
 # Structure follows files.qip of the Skull & Crossbones MiSTer core

@@ -33,7 +33,9 @@ the high scores. You change them in the game's own service menu (see
 
 ## Installing
 
-1. Copy `releases/Batman_<date>.rbf` to `/media/fat/_Arcade/cores/`.
+1. Copy `releases/Arcade-Batman_<date>.rbf` to `/media/fat/_Arcade/cores/`
+   and rename it `Batman_<date>.rbf`, which is the name the MRA asks for.
+   (The MiSTer update scripts drop the `Arcade-` prefix for you.)
 2. Copy `releases/Batman.mra` to `/media/fat/_Arcade/`.
 3. Put the MAME ROM set `batman.zip` in `/media/fat/games/mame/`.
 
@@ -190,18 +192,23 @@ on every corner, with +1.9 ns of setup slack on the system clock.
 
 Quartus Prime **17.0.2** (Lite or Standard), as for other MiSTer cores.
 
-1. Open `Batman.qpf`.
-2. Compile. The output is `output_files/Batman.rbf`.
-3. For a release, copy it to `releases/Batman_YYYYMMDD.rbf`.
+1. Open `Arcade-Batman.qpf`.
+2. Compile. The output is `output_files/Arcade-Batman.rbf`.
+3. For a release, copy it to `releases/Arcade-Batman_YYYYMMDD.rbf`.
+
+Like every MiSTer arcade core, the bitstream carries an `Arcade-` prefix. The
+MiSTer distribution strips it when it installs the core, so the MRA's
+`<rbf>Batman</rbf>` stays as it is.
 
 Or from the command line:
 
 ```bash
-quartus_sh --flow compile Batman
+quartus_sh --flow compile Arcade-Batman
 ```
 
 Sources are listed in `files.qip`. Add new files there by hand, not through
-the Quartus IDE, which writes them into `Batman.qsf` instead. `Batman.qsf`
+the Quartus IDE, which writes them into `Arcade-Batman.qsf` instead.
+`Arcade-Batman.qsf`
 pins fitter seed 3. Re-check timing if you change it.
 
 ---
@@ -209,7 +216,8 @@ pins fitter seed 3. Re-check timing if you change it.
 ## Repository layout
 
 ```text
-Batman.qpf / .qsf / .sdc    Quartus project
+Arcade-Batman.qpf / .qsf    Quartus project
+Batman.sdc                  Timing constraints
 Arcade-Batman.sv            Glue between the MiSTer framework and the core
 files.qip                   Source file list
 rtl/
