@@ -1,14 +1,17 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+// Copyright (c) 2026 RetroShrimp. GPL v2 or later.
+//
 //============================================================================
 // Klax OKI MSM6295-compatible ADPCM Sound Chip
 //
-// MAME reference (0.288, cached under /mame):
+// MAME reference (0.288):
 //   okim6295.cpp / okiadpcm.cpp; klax.cpp configures
 //   OKIM6295(config, "oki", 14.318181 MHz / 4 / 4, PIN7_HIGH) and maps byte
 //   read/write at 0x270001 on the 68000 lower data lane.
 //
 // Verified bit-exact against a MAME-0.288-equivalent golden model by
-// core/tb/tb_klax_oki6295_parity.v (vectors from core/sim/make_oki_golden.py
-// using the real Klax sample ROMs).
+// a sample-for-sample parity testbench driven by the real Klax sample
+// ROMs.
 //
 // Behavioral contract (matches MAME exactly):
 //   - Command protocol: a byte with bit 7 latches a pending sample number;

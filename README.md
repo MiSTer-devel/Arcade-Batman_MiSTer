@@ -177,14 +177,15 @@ independent reference:
 | Boot | 338,939 bus cycles of the 68000 from power-on (every write, and every access outside the program ROM), compared one by one with MAME | Same cycles in the same order. The only differences are four status reads made while the sound CPU is still held in reset (it starts later on the real board than in MAME), and the first interrupt, after which the core and MAME no longer run in step |
 | Video | 44 frames (attract, gameplay, the staircase scene, all four self-test screens, synthetic states) compared pixel by pixel with MAME, with graphics fetched through the real SDRAM path | 3,548,160 pixels, 0 mismatches |
 | Sound | 3 s of attract and 22 s of gameplay replayed against MAME recordings | Every sound-chip write made in answer to a game command matches MAME in order and value |
+| YM2151 | jt51's own checks, 780 of them, taken from measurements of a real chip, run on the copy in this core | All pass |
 | Whole core | Built with Quartus 17.0.2 and run on DE10-Nano boards by the author and by other testers | Boots and plays with no problems reported. Screenshots of the four self-test screens taken on MiSTer match MAME pixel for pixel, apart from the black-level clamp |
 
 The test benches, MAME captures and development notes behind these results
 are not part of this repository.
 
-Resource use of the shipped build (Cyclone V 5CSEBA6U23I7): 14,120 / 41,910
-ALMs (34 %), 457 / 553 M10K blocks (83 %), 67 / 112 DSP blocks. Timing is met
-on every corner, with +1.9 ns of setup slack on the system clock.
+Resource use of the shipped build (Cyclone V 5CSEBA6U23I7): 14,031 / 41,910
+ALMs (33 %), 457 / 553 M10K blocks (83 %), 67 / 112 DSP blocks. Timing is met
+on every corner, with +1.6 ns of setup slack on the system clock.
 
 ---
 
@@ -254,7 +255,7 @@ third-party component and its licence:
 | `rtl/lib/fx68k/`, © Jorge Cwik | GPL-3.0-or-later |
 | `rtl/lib/T65/`, © Daniel Wallner and contributors | BSD-style |
 | `rtl/lib/jt51/`, © José Tejada Gómez | GPL-3.0-or-later |
-| `rtl/lib/oki/`, from the Klax MiSTer core | GPL-2.0-or-later |
+| `rtl/lib/oki/`, © RetroShrimp, from the Klax MiSTer core | GPL-2.0-or-later |
 | `rtl/video/crt_adjust.sv`, © Umberto Parisi (rmonic79) | GPL-3.0-or-later |
 | `sys/`, MiSTer framework, © Alexey Melnikov and contributors | GPL-2.0-or-later / GPL-3.0-or-later |
 

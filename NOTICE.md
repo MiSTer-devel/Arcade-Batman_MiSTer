@@ -11,8 +11,8 @@ headers.
 | MiSTer framework (`sys_top`, `hps_io`, `arcade_video`, `video_freak`, `ascal`, `osd`, …) | Till Harbaum, Alexey Melnikov (Sorgelig) and the MiSTer-devel contributors | GPL-2.0-or-later / GPL-3.0-or-later (per-file headers) | `sys/`: vendored verbatim, never edited. Template_MiSTer commit `3ea1134` (2026-08-26) |
 | **fx68k**, a cycle-exact MC68000 with its microcode ROMs | Jorge Cwik (ijor) | GPL-3.0-or-later | `rtl/lib/fx68k/`: vendored verbatim, with its own `LICENSE` and `README.md` |
 | **T65**, a 65xx CPU core (VHDL) | Daniel Wallner, Mike Johnson, Wolfgang Scherr, Morten Leikvoll | BSD-style 3-clause (notice in `T65.vhd`) | `rtl/lib/T65/`: vendored verbatim. `T65_wrap.vhd` is a flat-port wrapper from the Skull & Crossbones core (GPL-3.0) |
-| **JT51**, the YM2151 FM synthesiser | José Tejada Gómez (jotego) | GPL-3.0-or-later | `rtl/lib/jt51/`: vendored verbatim |
-| **`klax_oki6295.v`**, an MSM6295 ADPCM core | the Klax MiSTer core authors | GPL-2.0-or-later | `rtl/lib/oki/`: vendored verbatim. `rtl/sound/batman_oki.sv` is derived from it |
+| **JT51**, the YM2151 FM synthesiser | José Tejada Gómez (jotego) | GPL-3.0-or-later | `rtl/lib/jt51/`: upstream commit `c3d40f0` (2026-10-19). One file is changed: `jt51_timers.v` also clears the timer counter on reset, as its header says. The same change is in the other Atari MiSTer cores |
+| **`klax_oki6295.v`**, an MSM6295 ADPCM core | RetroShrimp (the Klax MiSTer core) | GPL-2.0-or-later | `rtl/lib/oki/`: vendored verbatim. `rtl/sound/batman_oki.sv` is derived from it |
 | `crt_adjust.sv`, the CRT Adjust line buffer (H-Size, H-Position, V-Shift) | Umberto Parisi (rmonic79), from [MiSTer-CRT-Adjust](https://github.com/rmonic79/MiSTer-CRT-Adjust) commit `c682de9` | GPL-3.0-or-later | `rtl/video/crt_adjust.sv`: vendored with the four small changes listed in its header, shared with the other Atari MiSTer cores |
 | Intel PLL megafunction (50 MHz → 57.272727 MHz) | Intel Corporation (generated IP) | Intel FPGA IP licence, as generated | `rtl/pll.v`, `rtl/pll/` |
 
